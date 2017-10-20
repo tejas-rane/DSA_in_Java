@@ -12,3 +12,9 @@ Link list functions implemented:
   9. int lengthIterative()
   10. int lengthRecursive(Node node)
 	11. void swapNodes(int x, int y)
+	
+Stack functions implemented:
+ 1. boolean isEmpty()
+ 2. boolean push(int el)
+ 3. int pop()
+ 4. void printStack()
