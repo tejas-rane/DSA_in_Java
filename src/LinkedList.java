@@ -63,6 +63,29 @@ public class LinkedList {
 		
 	}
 	
+	public void delete(int pos){
+		//if it is empty
+		if (head == null){
+			return;
+		}
+		
+		//if head is to be removed
+		Node remove = head;
+		if(pos == 0 ){
+			head = remove.next;
+		}
+		else{
+			while(pos > 1){
+				remove = remove.next;
+				pos --;
+			}
+			if (remove == null || remove.next == null){
+				return;
+			}
+			remove.next = remove.next.next;
+		}
+	}
+	
 	public static void main(String[] args) {
 		LinkedList list = new LinkedList();
 		
@@ -87,6 +110,15 @@ public class LinkedList {
 		list.printlist();
 		list.append(25);
 		System.out.println("append ");
+		list.printlist();
+		
+		list.delete(0);
+		System.out.println("delete ");
+		list.printlist();
+		
+
+		list.delete(3);
+		System.out.println("delete ");
 		list.printlist();
 	}
 
