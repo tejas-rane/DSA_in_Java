@@ -1,19 +1,15 @@
 
 public class LinkedList {
 	Node head;
-
 	static class Node {
 		int data;
 		Node next;
-
 		public Node(int data) {
 			super();
 			this.data = data;
 			this.next = null;
 		}
-
 	}
-
 	public void printlist() {
 		Node n = head;
 		while (n != null) {
@@ -22,13 +18,11 @@ public class LinkedList {
 		}
 		System.out.println();
 	}
-
 	public void push(int data) {
 		Node newNode = new Node(data);
 		newNode.next = head;
 		head = newNode;
 	}
-
 	public void insertAfter(int data, int pos) {
 		int count = 0;
 		Node prev = head;
@@ -42,9 +36,7 @@ public class LinkedList {
 			}
 			insertAfter(data, prev);
 		}
-
 	}
-
 	public void append(int data) {
 		Node newNode = new Node(data);
 		Node temp = head;
@@ -54,7 +46,6 @@ public class LinkedList {
 		newNode.next = null;
 		temp.next = newNode;
 	}
-
 	public void insertAfter(int data, Node prev) {
 		Node newNode = new Node(data);
 		if (prev == null) {
@@ -63,15 +54,12 @@ public class LinkedList {
 		}
 		newNode.next = prev.next;
 		prev.next = newNode;
-
 	}
-
 	public void delete(int pos) {
 		// if it is empty
 		if (head == null) {
 			return;
 		}
-
 		// if head is to be removed
 		Node remove = head;
 		if (pos == 0) {
@@ -84,18 +72,15 @@ public class LinkedList {
 					return;
 				}
 			}
-			
 			remove.next = remove.next.next;
 		}
 	}
-
 	public  boolean searchRecursive(int i, Node node) {
 		
 		if(node == null) return false;
 		if(node.data == i) return true;
 		else return searchRecursive(i, node.next);
 	}
-
 	public  boolean searchIterative(int i) {
 		Node temp = head;
 		while (temp != null ){
@@ -104,7 +89,6 @@ public class LinkedList {
 		}
 		return false;
 	}
-
 	public int lengthIterative() {
 		int count = 0 ;
 		Node runner = head;
@@ -112,19 +96,14 @@ public class LinkedList {
 			count++;
 			runner = runner.next; 
 		}
-		
 		return count;
 	}
-
 	public int lengthRecursive(Node node) {
 		if(node == null){
 			return 0;
 		}else return 1+lengthRecursive(node.next);
-		
-		
 	}
 	public void swapNodes(int x, int y){
-		
 		if(x == y){System.out.println("Swap : same"); return;}
 		//currx and curry are the nodes to be swapped, as loop will break when data is equal and found!
 		Node currx= head;
@@ -205,6 +184,4 @@ public class LinkedList {
 		list.swapNodes(12,26);
 		list.swapNodes(1,4);list.swapNodes(4,25);list.swapNodes(13,4);
 	}
-
-	
 }
