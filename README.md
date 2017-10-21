@@ -18,3 +18,9 @@ Stack functions implemented:
  2. boolean push(int el)
  3. int pop()
  4. void printStack()
+SmallProgramPractice.java
+ 1. checkArmstrong(int num)
+ 2. sumOfAllDigits(int num)
+ 3. isAnagram(String s1, String s2)
+ 4. countOfUniqChars(String in)
+ 5. printOfUniqChars(String in)
