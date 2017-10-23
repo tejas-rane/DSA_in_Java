@@ -183,5 +183,9 @@ public class LinkedList {
 		list.swapNodes(13,26);
 		list.swapNodes(12,26);
 		list.swapNodes(1,4);list.swapNodes(4,25);list.swapNodes(13,4);
+		
+		//list.reverse();
+		//list.reverseInGroupsof();
+		//list.reverseFirstK
 	}
 }
