@@ -136,6 +136,69 @@ public class LinkedList {
 		curry.next = temp;
 		this.printlist();
 	}
+	public Node reverseIterative(){
+		Node current = head;
+		Node prev = null;
+		Node next = null;
+		
+		while(current != null){
+			next = current.next;
+			current.next = prev;
+			prev = current;
+			current = next;
+		}
+		return prev;
+	}
+	public Node reverseRecursively(Node node){
+		if(node.next == null){
+			return node;
+		}
+		Node ret = reverseRecursively(node.next);
+		//System.out.println("ret value is "+ ret.data);
+		node.next.next = node;
+		node.next = null;
+		return ret; // this is the new head and hence the value of ret is last node in all iteration
+	}
+	public void printMiddleElement(){
+		Node slw = head;
+		Node fast = head;
+		while (fast != null && fast.next!=null){
+			slw = slw.next;
+			fast = fast.next.next;
+		}
+		System.out.println("middle element is "+ slw.data);
+		//if length of LinkedList is even, it floors the middle and gives value of next element
+	}
+	public void getNthElement(int index){
+		int count = 0;
+		int length = lengthIterative();
+		Node temp = head;
+		if(index>length){
+			System.out.println("Index out of bound");
+			return;
+		}
+		while (count < index){
+			temp = temp.next;
+			count++;
+		}
+		System.out.println("Value at index "+index +" is "+ temp.data);
+	}
+	public void getNthElementFromEnd(int index){
+		int len = lengthIterative();
+		int newIndex = (len - index)-1;
+		int count= 0;
+		Node temp = head;
+		//getNthElement(newIndex); the display messg is not generic, so copy pasted above code
+		if(newIndex>len){
+			System.out.println("Index out of bound");
+			return;
+		}
+		while (count < newIndex){
+			temp = temp.next;
+			count++;
+		}
+		System.out.println("Value at index "+index +" from end of list is "+ temp.data);
+	}
 	public static void main(String[] args) {
 		LinkedList list = new LinkedList();
 		list.head = new Node(1);
@@ -182,10 +245,29 @@ public class LinkedList {
 		list.swapNodes(13,13);
 		list.swapNodes(13,26);
 		list.swapNodes(12,26);
-		list.swapNodes(1,4);list.swapNodes(4,25);list.swapNodes(13,4);
+		list.swapNodes(1,4);
+		list.swapNodes(4,25);
+		list.swapNodes(13,4);
 		
-		//list.reverse();
+		list.head = list.reverseIterative();
+		System.out.println("reverse Iterative");
+		list.printlist();
+		list.head = list.reverseRecursively(list.head);
+		System.out.println("reverse Recursively");
 		//list.reverseInGroupsof();
 		//list.reverseFirstK
+		list.printlist();
+		list.printMiddleElement();
+		list.append(76);
+		list.printlist();
+		list.printMiddleElement();
+		list.append(37);
+		list.printlist();
+		list.printMiddleElement();
+		list.getNthElement(5);
+		list.getNthElement(9);
+		list.printlist();
+		list.getNthElementFromEnd(2);
+		
 	}
 }
