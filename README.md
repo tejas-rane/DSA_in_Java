@@ -14,9 +14,15 @@ Link list functions implemented:
   11. void swapNodes(int x, int y)
   12. Node reverseIterative()
   13. Node reverseRecursively(Node node)
-  14. void printMiddleElement()
-  15. void getNthElement(int index)
-  16. void getNthElementFromEnd
+  14. Node reverseKNodesInGroups(Node head, int k)
+  15. void printMiddleElement()
+  16. void getNthElement(int index)
+  17. void getNthElementFromEnd()
+  18. void countOccurences(int num)
+  19. void deleteList()
+  20. detectLoop()
+  21. void swapInpairsIterative()
+  22. void checkPalindrome()
 	
 Stack functions implemented:
  1. boolean isEmpty()
