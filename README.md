@@ -23,6 +23,7 @@ Link list functions implemented:
   20. detectLoop()
   21. void swapInpairsIterative()
   22. void checkPalindrome()
+  23. void isCircular()
 	
 Stack functions implemented:
  1. boolean isEmpty()
