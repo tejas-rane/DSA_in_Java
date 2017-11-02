@@ -320,6 +320,19 @@ public class LinkedList {
 		if (palindrome) System.out.println("Linked list is  a palindrome");
 		return;
 	}
+	public void isCircular(){
+		if(head == null)
+			System.out.println("Its a circle Linked List");
+		Node temp = head;
+		
+		while(temp.next != null && temp.next != head)
+			temp = temp.next;
+		
+		if (temp.next ==  head)
+			System.out.println("It is a circular Linked List");
+		else System.out.println("Not a circular Linked List");
+		
+	}
 	public static void main(String[] args) {
 		LinkedList list = new LinkedList();
 		list.head = new Node(1);
