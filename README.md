@@ -1,5 +1,6 @@
 # DSA_in_Java
-This is practice problems to learn various data structures.
+This is practice problems to learn various data structures and algorithms.
+
 Link list functions implemented:
   1. void printlist
   2. void push(int data)
@@ -37,3 +38,12 @@ SmallProgramPractice.java
  3. isAnagram(String s1, String s2)
  4. countOfUniqChars(String in)
  5. printOfUniqChars(String in)
+
+BinaryTree.java
+ Basic implemenation of tree
+BST.java
+ 1. BSTNode insert(BSTNode rootNode, int data)
+ 2. boolean search(BSTNode rootNode, int data)
+ 3. void inOrder(BSTNode rootNode)
+ 4. void preOrder(BSTNode rootNode)
+ 5. void postOrder(BSTNode rootNode)
