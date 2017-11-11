@@ -65,7 +65,7 @@ public class BST {
 		// TODO Auto-generated method stub
 		BST bst = new BST();
 		root = bst.insert(root,15);
-		System.out.println();
+		System.out.println("inOrder");
 		bst.inOrder(root);
 		root = bst.insert(root,10);
 		//System.out.println("10 and root");
@@ -77,7 +77,18 @@ public class BST {
 		System.out.println();bst.inOrder(root);
 		bst.insert(root,12);
 		System.out.println();bst.inOrder(root);
-		
+		bst.insert(root,40);
+		System.out.println();bst.inOrder(root);
+		bst.insert(root,42);
+		System.out.println();bst.inOrder(root);
+		bst.insert(root,39);
+		System.out.println();bst.inOrder(root);
+		bst.insert(root,41);
+		System.out.println();bst.inOrder(root);
+		bst.insert(root,11);
+		System.out.println();bst.inOrder(root);
+		bst.insert(root,14);
+		System.out.println();bst.inOrder(root);
 		if(bst.search(root, 8)) System.out.println("\nfound");
 		else System.out.println("Not found");
 		if(bst.search(root, 25)) System.out.println("found");
