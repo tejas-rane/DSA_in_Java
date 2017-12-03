@@ -134,6 +134,25 @@ public class SmallProgramsPractice {
 			System.out.println("Not a palindrome number");
 		}
 	}
+	public static void reverseWordsInString(String s){
+		String[] words = s.split(" ");
+        String reverseString = "";
+        
+        
+        for(int i =0 ; i< words.length; i++){
+            char[] w = words[i].toCharArray();
+            
+            String revWord = "";
+            
+            for(int j =w.length-1 ; j>=0 ;j--){
+                revWord = revWord+w[j];
+            }
+            reverseString = reverseString + revWord + " ";
+        }
+        reverseString = reverseString.substring(0,reverseString.length() - 1);
+        System.out.print(reverseString);
+        //return reverseString;
+	}
 	public static void main(String[] args) {
 		checkArmstrong(371);
 		checkArmstrong(123);
@@ -146,6 +165,7 @@ public class SmallProgramsPractice {
 		findDuplicate(arr);
 		firstNonRepeatingChar("sazsdahdvajzdvjada");
 		isPalindrome("madam");isPalindrome("madama");isPalindrome(123454321);isPalindrome(1234554321);
+		reverseWordsInString("Let's take LeetCode contest");
 	}
 
 }
