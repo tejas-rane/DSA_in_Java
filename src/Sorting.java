@@ -20,10 +20,26 @@ public class Sorting {
 		}
 		printArray();
 	}
+	public static void insertionSort(){
+		int i= 0;
+		int j,temp;
+		int key= 0;
+		
+		for(i=1;i<arr.length;i++){
+			key = arr[i];
+			j = i-1;
+			while(j>0 && key < arr[j]){
+				arr[j+1]= arr[j];
+				j--;
+			}
+			arr[j+1]=key;
+		}
+		printArray();
+	}
 	public static void main(String[] args) {
 
-		bubbleSort();
-		
+		//bubbleSort();
+		insertionSort();
 
 	}
 
