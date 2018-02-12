@@ -29,10 +29,13 @@ public class Sorting {
 			key = arr[i];
 			j = i-1;
 			while(j>0 && key < arr[j]){
-				arr[j+1]= arr[j];
+				//swap
+				temp = arr[j];
+				arr[j] = arr[j+1] ;
+				arr[j+1]=temp;
 				j--;
 			}
-			arr[j+1]=key;
+			//arr[j+1]=key;
 		}
 		printArray();
 	}
