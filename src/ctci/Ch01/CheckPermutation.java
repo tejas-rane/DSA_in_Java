@@ -28,6 +28,7 @@ public class CheckPermutation {
 		else {
 			System.out.println("No");
 		}
-		//
+		//for ASCII conditions, create an empty array and mark 1 to all positions of char in given first string
+		// iterate to second string and decrement elements if value < 0 found throw false.
 	}
 }
