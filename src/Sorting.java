@@ -96,13 +96,33 @@ public class Sorting {
 			merge(input , l , m  , r);
 		}
 	}
+	private static void selectionSort() {
+		// TODO Auto-generated method stub
+		int min_indx = 0;
+		for(int i =0 ; i < arr.length;i++){
+			min_indx = i;
+			for(int j = i+1; j<arr.length;j++){
+				if(arr[j]<arr[min_indx]){
+					min_indx = j;
+				}
+			}
+			//swap
+			int temp = arr[min_indx];
+			arr[min_indx]=arr[i];
+			arr[i]=temp;
+		}
+		printArray();
+	}
 	public static void main(String[] args) {
 
 		//bubbleSort();
 		//insertionSort();
-		mergeSort(arr,0,arr.length-1);
-		System.out.println();
-		printArray(arr);
+		//mergeSort(arr,0,arr.length-1);
+		//System.out.println();
+		//printArray(arr);
+		
+		selectionSort();
 	}
+	
 
 }
