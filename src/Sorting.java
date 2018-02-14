@@ -121,17 +121,17 @@ public class Sorting {
 
 	private static void quickSort(int[] arr2, int start, int end) {
 		if (start < end) {
-			int p = partition(arr2, start, end);
-		
+			int p = partitionWithRightElement(arr2, start, end);
+			//int p = partitionWithLeftElement(arr2, start, end);
 			quickSort(arr2, start, p - 1);
 		
 			quickSort(arr2, p, end);
 		}
 	}
 
-	private static int partition(int[] arr2, int start, int end) {
-		int pivot = arr2[end];
-		int i = start-1; //index of smaller element
+	private static int partitionWithRightElement(int[] arr2, int start, int end) {
+		int pivot = arr2[start];
+		int i = start-1; //index of smaller element, also a wall
 		for (int j = start;j<end;j++){
 			if(arr2[j] <=  pivot){
 				i++;
@@ -152,6 +152,27 @@ public class Sorting {
 		return i+1;
 	}
 
+	private static int partitionWithLeftElement(int[] arr2, int start, int end) {
+		int i = start;
+		int j = end;
+		int pivot = arr2[start];
+		while(i<j){
+			while(arr2[i]<=pivot)
+				i++;
+			while(arr2[j]>pivot)
+				j--;
+			if(i<j){
+				//swap
+				int temp = arr2[i];
+				arr2[i]=arr2[j];
+				arr2[j]=temp;
+			}
+		}
+		//j is the correct position of pivot
+		arr2[i]=arr2[j];
+		arr2[j]=pivot;
+		return j;
+	}
 	public static void main(String[] args) {
 
 		// bubbleSort();
@@ -160,11 +181,12 @@ public class Sorting {
 		// System.out.println();
 		// printArray(arr);
 
-		selectionSort();
+		//selectionSort();
 
 		quickSort(arr, 0, arr.length-1);
 		System.out.println();
 		printArray(arr);
+		//quickSort(arr, 0, arr.length-1);
 	}
 
 }
