@@ -55,12 +55,6 @@ Sorting.java
  4. Merge Sort
  5. Quick Sort
  	1. with pivot last element
-	2. with pivot lowest element
-	3. with pivot median element
  6. Heap Sort
  7. Shell Sort
  
- Linear sorting algorithms
- 1. Counting Sort
- 2. Bucket Sort
- 3. Radix
