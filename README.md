@@ -47,3 +47,14 @@ BST.java
  3. void inOrder(BSTNode rootNode)
  4. void preOrder(BSTNode rootNode)
  5. void postOrder(BSTNode rootNode)
+
+Sorting.java
+ 1. Bubble Sort
+ 2. Insertion Sort
+ 3. Selection Sort
+ 4. Merge Sort
+ 5. Quick Sort
+ 	1. with pivot last element
+ 6. Heap Sort
+ 7. Shell Sort
+ 
