@@ -38,6 +38,7 @@ SmallProgramPractice.java
  3. isAnagram(String s1, String s2)
  4. countOfUniqChars(String in)
  5. printOfUniqChars(String in)
+ 
 
 BinaryTree.java
  Basic implemenation of tree
@@ -47,6 +48,7 @@ BST.java
  3. void inOrder(BSTNode rootNode)
  4. void preOrder(BSTNode rootNode)
  5. void postOrder(BSTNode rootNode)
+ 6. int maxDepth(BSTNode root)
 
 Sorting.java
  1. Bubble Sort
