@@ -55,6 +55,6 @@ Sorting.java
  4. Merge Sort
  5. Quick Sort
  	1. with pivot last element
- 6. Heap Sort
- 7. Shell Sort
+ 
+ 
  
