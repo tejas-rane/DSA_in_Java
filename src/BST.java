@@ -61,6 +61,13 @@ public class BST {
 		postOrder(rootNode.right);
 		System.out.print(rootNode.data + " ");
 	}
+	public static int maxDepth(BSTNode root) {
+        if(root == null)
+            return 0;
+        int left= maxDepth(root.left);
+        int right= maxDepth(root.right);
+        return left > right? left+1: right +1;
+    }
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		BST bst = new BST();
@@ -95,6 +102,7 @@ public class BST {
 		else System.out.println("Not found");
 		System.out.println("\npreorder");bst.preOrder(root);
 		System.out.println("\npostorder");bst.postOrder(root);
+		System.out.println("\nMax Depth is : "+ maxDepth(root));
 	}
 
 }
