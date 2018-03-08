@@ -1,6 +1,6 @@
 
 public class Sorting {
-	static int arr[] = { 1, 5, 2, 6, 3, 5, 7, 11, 3, 0 };
+	static int arr[] = { 1, 5, 2, 6, 3,11, 8,18,5, 3, 7 };
 
 	public static void printArray() {
 		for (int i = 0; i < arr.length; i++) {
@@ -130,7 +130,8 @@ public class Sorting {
 	}
 
 	private static int partitionWithRightElement(int[] arr2, int start, int end) {
-		int pivot = arr2[start];
+		int pivot = arr2[end];
+		System.out.println("pivot " + pivot);
 		int i = start-1; //index of smaller element, also a wall
 		for (int j = start;j<end;j++){
 			if(arr2[j] <=  pivot){
@@ -141,6 +142,7 @@ public class Sorting {
 				arr2[i]=temp;
 			}
 		}
+		
 		//place pivot at its perfect position
 		//pivot is at arr2[end]
 		//its correct position is arr2[i+1]
@@ -148,7 +150,8 @@ public class Sorting {
 		int temp = arr2[end];
 		arr2[end] = arr2[i+1];
 		arr2[i+1] = temp;
-		
+		System.out.println();
+		printArray(arr);
 		return i+1;
 	}
 
@@ -182,7 +185,7 @@ public class Sorting {
 		// printArray(arr);
 
 		//selectionSort();
-
+		printArray(arr);
 		quickSort(arr, 0, arr.length-1);
 		System.out.println();
 		printArray(arr);
