@@ -166,7 +166,17 @@ public class LinkedList {
 	}
 
 	public Node reverseIterative() {
-		Node current = head;
+		Node prev= null;
+        Node curr  = null;
+        Node next = head;
+        while(next != null){
+            curr = next;
+            next = next.next;
+            curr.next = prev;
+            prev = curr ;
+        }
+        return prev; // return curr also works
+		/*Node current = head;
 		Node prev = null;
 		Node next = null;
 
@@ -176,7 +186,7 @@ public class LinkedList {
 			prev = current;
 			current = next;
 		}
-		return prev;
+		return prev;*/
 	}
 
 	public Node reverseRecursively(Node node) {
@@ -191,7 +201,23 @@ public class LinkedList {
 					// node in all iteration
 	}
 	public Node reverseKNodesInGroups(Node head, int k){
-		int count = 0;
+		Node prev= null;
+        Node curr  = null;
+        Node next = head;
+        int count = 0;
+        while(count < k && next != null){
+            curr = next;
+            next = next.next;
+            curr.next = prev;
+            prev = curr ;
+            count++;
+        }
+        //next is pointer to k+ 1 node
+        if(next!=null )
+            head.next = reverseKNodesInGroups(next,k);
+        
+        return prev;
+        /*int count = 0;
 		Node curr= head;
 		Node next = null;
 		Node prev = null;
@@ -211,7 +237,7 @@ public class LinkedList {
 		if(next != null){
 			head.next = reverseKNodesInGroups(curr,k);
 		}
-		return prev;
+		return prev;*/
 	}
 	public void printMiddleElement() {
 		Node slw = head;
@@ -411,6 +437,9 @@ public class LinkedList {
 		list.head = list.reverseRecursively(list.head);
 		System.out.println("reverse Recursively");
 		// list.reverseInGroupsof();
+		list.printlist();
+		list.push(100);
+		list.push(16);
 		list.printlist();
 		System.out.println("reverse in groups");
 		list.head = list.reverseKNodesInGroups(list.head,3);
