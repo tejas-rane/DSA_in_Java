@@ -14,6 +14,7 @@ public class LinkedList {
 		}
 	}
 
+	
 	public void printlist() {
 		Node n = head;
 		while (n != null) {
