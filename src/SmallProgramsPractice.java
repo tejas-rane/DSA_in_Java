@@ -153,6 +153,20 @@ public class SmallProgramsPractice {
         System.out.print(reverseString);
         //return reverseString;
 	}
+	private static void isPanagram(String st) {
+		String cpych = st.replaceAll("\\s", "");
+		char[] arr = cpych.toLowerCase().toCharArray();
+		HashSet<Character> hs = new HashSet<Character>();
+		for (char cha : arr) {
+			hs.add(cha);
+		}
+		int size = hs.size();
+		if (size < 26) {
+			System.out.println("\nNot a pangram");
+		} else if (size == 26) {
+			System.out.println("\nIt is a Pangram");
+		}
+	}
 	public static void main(String[] args) {
 		checkArmstrong(371);
 		checkArmstrong(123);
@@ -166,6 +180,8 @@ public class SmallProgramsPractice {
 		firstNonRepeatingChar("sazsdahdvajzdvjada");
 		isPalindrome("madam");isPalindrome("madama");isPalindrome(123454321);isPalindrome(1234554321);
 		reverseWordsInString("Let's take LeetCode contest");
+		isPanagram("The five boxing wizard jump quickly!!!");
 	}
+	
 
 }
