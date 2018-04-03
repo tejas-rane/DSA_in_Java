@@ -20,7 +20,7 @@ public class Unique1_1 {
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String x= "H  I am Tejs Rn";
+		String x= "H  I am Tejs Ran";
 		checkUnique(x);
 	}
 

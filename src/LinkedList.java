@@ -31,7 +31,6 @@ public class LinkedList {
 	}
 
 	public void insertAfter(int data, int pos) {
-		int count = 0;
 		Node prev = head;
 		if (pos == 0) {
 			push(data);
@@ -87,7 +86,6 @@ public class LinkedList {
 	}
 
 	public boolean searchRecursive(int i, Node node) {
-
 		if (node == null)
 			return false;
 		if (node.data == i)

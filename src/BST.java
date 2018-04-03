@@ -64,9 +64,24 @@ public class BST {
 	public static int maxDepth(BSTNode root) {
         if(root == null)
             return 0;
-        int left= maxDepth(root.left);
-        int right= maxDepth(root.right);
-        return left > right? left+1: right +1;
+        if(root.left == null && root.right == null)
+            return 1;
+        else if(root.left== null)
+            return maxDepth(root.right)+1;
+        else if(root.right== null)
+            return maxDepth(root.left)+1;
+        return Math.max(maxDepth(root.left),maxDepth(root.right))+1;
+    }
+	public static int minDepth(BSTNode root) {
+        if(root == null)
+            return 0;
+        if(root.left == null && root.right == null)
+            return 1;
+        else if(root.left== null)
+            return minDepth(root.right)+1;
+        else if(root.right== null)
+            return minDepth(root.left)+1;
+        return Math.min(minDepth(root.left),minDepth(root.right))+1;
     }
 	public static int findTilt(BSTNode root) {
         if(root == null)
@@ -110,6 +125,7 @@ public class BST {
 		System.out.println("\npreorder");bst.preOrder(root);
 		System.out.println("\npostorder");bst.postOrder(root);
 		System.out.println("\nMax Depth is : "+ maxDepth(root));
+		System.out.println("\nMin Depth is : "+ minDepth(root));
 		System.out.println("\n Tilt of tree is " + findTilt(root));
 	}
 
