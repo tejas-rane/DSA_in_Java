@@ -219,6 +219,43 @@ public class SmallProgramsPractice {
 		}
 		System.out.println();
 	}
+	private static int power(int x, int y) {
+		int temp;
+	    if( y == 0)
+	        return 1;
+	    temp = power(x, y/2);
+	    if (y%2 == 0)
+	        return temp*temp;
+	    else
+	        return x*temp*temp;
+		
+	}
+    public static String reverseStr(String s, int k) {
+        StringBuilder sb = new StringBuilder(s);
+        //StringBuilder out = new StringBuilder();
+        int i =0;
+        int len = s.length();
+        boolean flag = true;
+        if(len<2) return s;
+        /*if (k>len){
+            sb.reverse();
+            return sb.toString();
+        } */
+        while(i < len-1 ){//&& i+k < len
+            if(flag){
+            	int end = i+k<len?i+k:len;
+                String sbtemp = sb.substring(i,end);
+                StringBuilder temp  = new StringBuilder(sbtemp);
+                temp.reverse();
+                sb.replace(i,i+k,temp.toString());
+                flag = false;
+            }else{
+                flag = true;
+            }
+            i=i+k;
+        }
+        return sb.toString();
+    }
 	public static void main(String[] args) {
 		checkArmstrong(371);
 		checkArmstrong(123);
@@ -240,7 +277,11 @@ public class SmallProgramsPractice {
 		isPalindrome(1234554321);
 		reverseWordsInString("Let's take LeetCode contest");
 		isPanagram("The five boxing wizard jump quickly!!!");
+		System.out.println(power(2,5));
+		System.out.println(reverseStr("hyzqyljrnigxvdtneasepfahmtyhlohwxmkqcdfehybknvdmfrfvtbsovjbdhevlfxpdaovjgunjqlimjkfnqcqnajmebeddqsgl",39));
 	}
+
+	
 
 	
 
