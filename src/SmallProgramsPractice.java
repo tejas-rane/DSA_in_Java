@@ -256,6 +256,44 @@ public class SmallProgramsPractice {
         }
         return sb.toString();
     }
+    /*
+     * 
+		// ["cat", "dog", "tag", "god", "zak"]
+		//["cat" -> "tag" -> "god" <-> "dog"], ["zak"]
+		// ["cat", "tag", "dog", "hod"]
+		// cat -> tag, hod -> dog
+		
+		class solution{
+		
+			public static boolean helper(String a, String b){
+		  	//to compare two string and return true if connected or false if no
+		    if(a.charAt(a.length()) == b.charAt(0))  return true;
+		    return false;
+		  }
+			public static isConnected(String[] input){
+			  int finalSize = input.length();
+		    int[] matches = new int[finalSize];
+		    List<String> chain = new ArrayList<String>();
+		    chain.add(input[0]);
+		    for(int i=1 ; i < finalSize; i++){
+							for(String a : chain){
+		          		if(helper(a,input[i])){
+		              chain.add(input[i])
+		              }
+		
+		          }
+		                  //}
+		      }
+		    if(chain.size() == finalsize)
+		    	return true;
+		    return false
+		    }
+		  }
+		  
+		}
+		
+
+     */
 	public static void main(String[] args) {
 		checkArmstrong(371);
 		checkArmstrong(123);
