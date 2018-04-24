@@ -19,6 +19,10 @@ public class ValidSentence {
 		    }
 		}
 		//System.out.println(doubleQuotes + " "+ singleQuotes);
+		/*
+		 * long java8 = testString.chars().filter(ch -> ch =='.').count();
+			System.out.println("java8 = " + java8);
+		 */
 		return doubleQuotes%2 == 0 && singleQuotes %2 == 0;
 	}
 
